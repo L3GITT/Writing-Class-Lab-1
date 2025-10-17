@@ -1,0 +1,90 @@
+public class Home {
+    private String firstName;
+    private String lastName;
+    private int footage;
+    private double dwelling;
+    private double contents;
+    private double liability;
+    private double commission;
+
+    public Home() {
+        this.firstName = "";
+        this.lastName = "";
+        this.footage = 0;
+        this.dwelling = 0.0;
+        this.contents = 0.0;
+        this.liability = 0.0;
+        this.commission = 0.0;
+    }
+
+    public Home(String firstName, String lastName, int footage, double dwelling, double contents, double liability) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.footage = footage;
+        this.dwelling = dwelling;
+        this.contents = contents;
+        this.liability = liability;
+        this.commission = 0.0;
+    }
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public int getFootage() {
+        return footage;
+    }
+
+    public double getDwelling() {
+        return dwelling;
+    }
+
+    public double getContents() {
+        return contents;
+    }
+
+    public double getLiability() {
+        return liability;
+    }
+
+    public double getCommission() {
+        return commission;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setFootage(int footage) {
+        this.footage = footage;
+    }
+
+    public void setDwelling(double dwelling) {
+        this.dwelling = dwelling;
+    }
+
+    public void setContents(double contents) {
+        this.contents = contents;
+    }
+
+    public void setLiability(double liability) {
+        this.liability = liability;
+    }
+
+    public void computeCommission() {
+        this.commission = (liability * 0.30) + ((dwelling + contents) * 0.20);
+    }
+    @Override
+    public String toString() {
+        return String.format("Home Policy\n-----------\nName: %s %s\nFootage: %d\n" +
+                "Dwelling: $%,.2f\nContents: $%,.2f\nLiability: $%,.2f\nCommission: $%,.2f\n",
+                firstName, lastName, footage, dwelling, contents, liability, commission);
+    }
+}
