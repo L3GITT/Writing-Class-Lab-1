@@ -1,0 +1,80 @@
+public class Auto {
+    private String firstName;
+    private String lastName;
+    private String make;
+    private String model;
+    private double liability;
+    private double collision;
+    private double commission;
+
+    public Auto(String firstName, String lastName, String make, String model, double liability, double collision) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.make = make;
+        this.model = model;
+        this.liability = liability;
+        this.collision = collision;
+        this.commission = 0.0;
+    }
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getMake() {
+        return make;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public double getLiability() {
+        return liability;
+    }
+
+    public double getCollision() {
+        return collision;
+    }
+    public double getCommission() {
+        return commission;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setMake(String make) {
+        this.make = make;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public void setLiability(double liability) {
+        this.liability = liability;
+    }
+
+    public void setCollision(double collision) {
+        this.collision = collision;
+    }
+
+    public void computeCommission() {
+        this.commission = (liability + collision) * 0.30;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Auto Policy\n-----------\nName: %s %s\nMake: %s\nModel: %s\n" +
+                "Liability: $%,.2f\nCollision: $%,.2f\nCommission: $%,.2f\n",
+                firstName, lastName, make, model, liability, collision, commission);
+    }
+}
