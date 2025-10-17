@@ -1,0 +1,60 @@
+public class Life {
+    private String firstName;
+    private String lastName;
+    private int age;
+    private double term;
+    private double commission;
+    public Life(String firstName, String lastName, int age, double term) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+        this.term = term;
+        this.commission = 0.0;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public double getTerm() {
+        return term;
+    }
+
+    public double getCommission() {
+        return commission;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void setTerm(double term) {
+        this.term = term;
+    }
+    public void computeCommission() {
+        this.commission = term * 0.20;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Life Policy\n-----------\nName: %s %s\nAge: %d\n" +
+                "Term: $%,.2f\nCommission: $%,.2f\n",
+                firstName, lastName, age, term, commission);
+    }
+}
