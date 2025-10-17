@@ -1,0 +1,26 @@
+public class PolicyTest {
+
+    public static void main(String[] args) {
+        Auto a = new Auto("Jerry", "Seinfed", "Chevy", "Malibu", 10000.0, 50000.0);
+        
+        a.computeCommission();
+        System.out.println(a);
+        Home h = new Home();
+        h.setFirstName("Elaine");
+        h.setLastName("Benes");
+        h.setContents(5000);
+        h.setDwelling(32000);
+        h.setFootage(4000);
+        h.setLiability(10000);
+        h.computeCommission();
+        System.out.println(h);
+        
+        Life l = new Life("Cosmo", "Kramer", 35, 50000);
+        l.computeCommission();
+        System.out.println(l);
+        System.out.println("Get life firstName: " + l.getFirstName());
+        System.out.println("Get life lastName: " + l.getLastName());
+        System.out.println("Get life age: " + l.getAge());
+        System.out.println("Get life term: " + l.getTerm());
+    }
+}
